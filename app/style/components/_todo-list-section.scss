@@ -1,0 +1,25 @@
+.todo-list-container {
+  @include scrollbar;
+  flex: 1;
+  overflow-y: auto;
+}
+
+@import './_todo-list.scss';
+
+
+/* theme: dark */
+.theme-dark {
+  .todo-list-container {
+    @include dark-scrollbar($trackColor: #242424);
+  }
+}
+
+
+/* platform: web */
+@mixin todo-list-section--web {
+  .todo-list-container {
+    margin-left: var(--left-space);
+    margin-right: var(--right-space);
+    padding-right: 10px;
+  }
+}

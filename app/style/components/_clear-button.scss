@@ -1,0 +1,39 @@
+.clear-button {
+  width: 24px;
+  height: 24px;
+  display: none;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAOBAMAAADkjZCYAAAALVBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADBoCg+AAAADnRSTlMA+IBGrIZsXx8T09I6OVU9G5EAAABKSURBVAjXY2BgeqfAwGD47t07YQY9IPmIAQLygOxnDHZA8jFDH5B8wcAIJAUYuIDkBgYWIOnAwAokAxjYgWQBAw+QvMDACSQnAACAdSsYeEDHbwAAAABJRU5ErkJggg==') no-repeat center/10px;
+  opacity: .3;
+  position: absolute;
+  top: 0;
+  right: 5px;
+  cursor: pointer;
+	
+  &:hover {
+    opacity: .5;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.is-active {
+    display: inline-block;
+  }
+}
+
+
+/* theme: dark */
+.theme-dark {	
+  .clear-button {
+    filter: invert(1);
+  }
+}
+
+
+/* platform: web */
+@mixin clear-button--web {
+  .clear-button {
+    height: 32px;
+  }
+}

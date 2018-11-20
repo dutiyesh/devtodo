@@ -1,0 +1,59 @@
+.sidebar-container {
+  --color: #5a5a5a;
+  --border-color: #d0d0d0;
+  --background-color: #f3f3f3;
+
+  @include scrollbar;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 12px;
+  color: var(--color);
+  width: 150px;
+  padding-bottom: 5px;
+  background-color: var(--background-color);
+  border-right: 1px solid var(--border-color);
+  overflow-y: auto;
+}
+
+.sidebar-body {
+  flex-grow: 1;
+}
+
+@import '../components/_sidebar.scss';
+
+
+/* theme: dark */
+.theme-dark {
+  .sidebar-container {
+    --color: #d9d9d9;
+    --border-color: #525252;
+    --background-color: #333;
+
+    @include dark-scrollbar;
+  }
+}
+
+
+/* platform: web */
+@mixin sidebar-layout--web {
+  .sidebar-container {
+    --border-color: #e2e2e2;
+    --background-color: #fff;
+
+    flex-shrink: 0;
+    min-height: calc(100vh - 40px); // subtract `.app-container`'s top-bottom padding
+  }
+
+  @media (max-width: 576px) {
+    .sidebar-container {
+      width: 120px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .sidebar-container {
+      width: 100px;
+    }
+  }
+}

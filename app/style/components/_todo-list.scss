@@ -1,0 +1,28 @@
+.todo-list-item {
+  --border-color: #f0f0f0;
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+@import './_todo-item.scss';
+
+
+/* theme: dark */
+.theme-dark {
+  .todo-list-item {
+    --border-color: #3a3a3a;
+  }
+}
+
+
+/* platform: web */
+@mixin todo-list--web {
+  .todo-list {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .todo-list-item {
+    border-bottom: 0;
+  }
+}

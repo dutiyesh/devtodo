@@ -1,0 +1,32 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+input {
+  font-family: inherit;
+}
+
+input[type="text"],
+button {
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+}

@@ -1,0 +1,158 @@
+.todo-item {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.todo-item-checkbox-container {
+  width: var(--icon-container-width);
+  text-align: center;
+  line-height: 0;
+}
+
+.todo-item-checkbox {
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+}
+
+.todo-item-input {
+  --color: #777;
+  --color-hover: #222;
+  --color-complete: #bbb;
+
+  flex: 1;
+  padding: 4px var(--icon-container-width) 4px 0;
+  color: var(--color);
+
+  &:hover,
+  &:focus {
+    color: var(--color-hover);
+  }
+}
+
+/* todo remove */
+.todo-item-remove {
+  --color: #888;
+  --background-color: #e2e2e2;
+
+  display: none;
+  position: absolute;
+  right: 0;
+  width: var(--icon-container-width);
+  height: 14px;
+  text-align: center;
+  cursor: pointer;
+
+  &:after {
+    content: '\00d7';
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    color: var(--color);
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 14px;
+  }
+
+  &:hover {
+    &:after {
+      background-color: var(--background-color);
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+/* state: complete */
+.is-complete {
+  .todo-item-input {
+    color: var(--color-complete);
+    text-decoration: line-through;
+  }
+}
+
+
+/* theme: dark */
+.theme-dark {
+  .todo-item-input {
+    --color: #aaa;
+    --color-hover: #d9d9d9;
+    --color-complete: #666;
+  }
+
+  .todo-item-remove {
+    --color: #777;
+    --background-color: #aaa;
+  }
+}
+
+
+/* item: hover state */
+/* stylelint-disable no-duplicate-selectors */
+.todo-item {
+  &:hover {
+    .todo-item-remove {
+      display: block;
+    }
+  }
+}
+/* stylelint-enable */
+
+
+/* platform: web */
+@mixin todo-item--web {
+  .todo-item-checkbox-container {
+    position: relative;
+
+    &:after {
+      content: none;
+      display: block;
+      width: 8px;
+      height: 4px;
+      border-left: 1px solid #aaa;
+      border-bottom: 1px solid #aaa;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      position: absolute;
+      top: 46%;
+      left: 50%;
+      cursor: pointer;
+    }
+  }
+
+  .is-complete {
+    .todo-item-checkbox-container {
+      &:after {
+        content: '';
+      }
+    }
+  }
+
+  .todo-item-checkbox {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid #aaa;
+    -webkit-appearance: none;
+  }
+
+  .todo-item-input {
+    font-size: 15px;
+    font-weight: 500;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #e2e2e2;
+  }
+
+  @media (max-width: 1024px) {
+    .todo-item-remove {
+      --color: #aaa;
+
+      display: block;
+    }
+  }
+}

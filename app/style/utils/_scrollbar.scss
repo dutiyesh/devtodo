@@ -1,0 +1,35 @@
+@mixin scrollbar($width: 12px) {
+  --track-color: #f3f3f3;
+  --track-border-color: #f3f3f3;
+  --thumb-color: #d5d5d5;
+  --thumb-border-color: #d5d5d5;
+  --thumb-hover-color: #c5c5c5;
+
+  &::-webkit-scrollbar {
+    width: $width;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: var(--track-color);
+    border: 1px solid var(--track-border-color);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--thumb-color);
+    border: 1px solid var(--thumb-border-color);
+
+    &:hover {
+      background-color: var(--thumb-hover-color);
+    }
+  }
+}
+
+
+/* theme: dark */
+@mixin dark-scrollbar($trackColor: #333) {
+  --track-color: $trackColor;
+  --track-border-color: #333;
+  --thumb-color: #333;
+  --thumb-hover-color: #383838;
+  --thumb-border-color: #4a4a4a;
+}

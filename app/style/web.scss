@@ -1,0 +1,33 @@
+/* web app */
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+@import 'extension.scss';
+
+.platform-web {
+  @include extension--web;
+
+  /* sidebar */
+  @include sidebar-layout--web;
+  @include sidebar--web;
+
+
+  /* filter item */
+  @include visibility-filters--web;
+  @include clear-button--web;
+
+
+  /* main */
+  @include main-layout--web;
+
+
+  /* add todo form */
+  @include add-todo-form--web;
+
+
+  /* todo list */
+  @include todo-list-section--web;
+  @include todo-list--web;
+  @include todo-item--web;
+}

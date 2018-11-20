@@ -1,0 +1,32 @@
+@mixin sidebar-text-property {
+  padding-right: 8px;
+  padding-left: 8px;
+  font-size: 12px;
+  font-weight: normal;
+  height: 25px;
+  line-height: 25px;
+}
+
+.sidebar-heading {
+  @include sidebar-text-property;
+}
+
+.sidebar-footer-link {
+  @include sidebar-text-property;
+  color: var(--color);
+  display: inline-block;
+  text-decoration: underline;
+}
+
+@import './_visibility-filters.scss';
+
+
+/* platform: web */
+@mixin sidebar--web {
+  .sidebar-heading {
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}

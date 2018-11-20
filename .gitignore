@@ -1,0 +1,3 @@
+node_modules/
+.stylelintcache/
+dist/extension/
