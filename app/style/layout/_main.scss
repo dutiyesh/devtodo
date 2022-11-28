@@ -7,17 +7,15 @@
   background-color: var(--background-color);
 }
 
-@import '../components/_add-todo-form.scss';
-@import '../components/_todo-list-section.scss';
-
+@import "../components/_add-todo-form.scss";
+@import "../components/_todo-list-section.scss";
 
 /* theme: dark */
 .theme-dark {
   .main-container {
-    --background-color: #242424;
+    --background-color: #202124;
   }
 }
-
 
 /* platform: web */
 @mixin main-layout--web {

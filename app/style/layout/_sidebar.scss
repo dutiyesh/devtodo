@@ -6,7 +6,7 @@
   @include scrollbar;
   display: flex;
   flex-direction: column;
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-size: 12px;
   color: var(--color);
   width: 150px;
@@ -20,20 +20,18 @@
   flex-grow: 1;
 }
 
-@import '../components/_sidebar.scss';
-
+@import "../components/_sidebar.scss";
 
 /* theme: dark */
 .theme-dark {
   .sidebar-container {
-    --color: #d9d9d9;
-    --border-color: #525252;
-    --background-color: #333;
+    --color: #c3c3c3;
+    --border-color: #494c50;
+    --background-color: #252629;
 
     @include dark-scrollbar;
   }
 }
-
 
 /* platform: web */
 @mixin sidebar-layout--web {
@@ -42,7 +40,9 @@
     --background-color: #fff;
 
     flex-shrink: 0;
-    min-height: calc(100vh - 40px); // subtract `.app-container`'s top-bottom padding
+    min-height: calc(
+      100vh - 40px
+    ); // subtract `.app-container`'s top-bottom padding
   }
 
   @media (max-width: 576px) {

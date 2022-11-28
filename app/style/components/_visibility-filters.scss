@@ -11,7 +11,7 @@
   cursor: pointer;
 
   &:hover {
-    background-color: rgba(33, 150, 243, .05);
+    background-color: rgba(33, 150, 243, 0.05);
   }
 
   &:focus {
@@ -24,16 +24,14 @@
   }
 }
 
-
 /* theme: dark */
 .theme-dark {
   .todo-filter-type {
-    --active-background-color: #444;
+    --active-background-color: #414246;
   }
 }
 
-@import './_clear-button.scss';
-
+@import "./_clear-button.scss";
 
 /* platform: web */
 @mixin visibility-filters--web {
